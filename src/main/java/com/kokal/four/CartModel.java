@@ -8,7 +8,7 @@ import java.util.Collection;
  * Describe at least two steps that you would take to improve the cohesion
  * and reduce the coupling of this data model class.
  *
- * 1. Encapsulate the calls to QBPPurchasingRuleDao and QBPPurchasingRuleEngine behind a single facade method. Combining
+ * 1. Encapsulate the calls to PurchasingRuleDao and PurchasingRuleEngine behind a single facade method. Combining
  *    these calls will result in a more cohesive component, and reduces the need for client code to sequence multiple calls
  *    properly (as shown below) in order to accomplish its goals.
  * 2. Refactor the data access logic into a data access object (DAO). This will decouple the model from the
@@ -21,9 +21,9 @@ public class CartModel {
 
     public boolean addProductToCart(String product, int quantity) {
         final Collection<String> purchasingRules =
-                QBPPurchasingRuleDao.getInstance().getRulesForCustomer(customerId);
+                PurchasingRuleDao.getInstance().getRulesForCustomer(customerId);
         final boolean canPurchaseProduct =
-                QBPPurchasingRuleEngine.getInstance()
+                PurchasingRuleEngine.getInstance()
                         .canPurchaseProduct(product, quantity, purchasingRules);
         if (!canPurchaseProduct) {
             return false;
