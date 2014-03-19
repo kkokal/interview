@@ -7,21 +7,19 @@ import static org.junit.Assert.assertNull;
 
 public class ReverseTest {
 
-    Reverser reverser = new Reverser();
-
     @Test
     public void testNull() throws Exception {
-        assertNull(reverser.reverse(null));
+        assertNull(Reverser.reverse(null));
     }
 
     @Test
     public void testReverse() throws Exception {
 
-        assertEquals("tset", reverser.reverse("test"));
+        assertEquals("tset", Reverser.reverse("test"));
     }
 
     @Test
     public void testUnicodeReverse() throws Exception {
-        assertEquals("üd reksüh", reverser.reverse("hüsker dü"));
+        assertEquals("üd reksüh", Reverser.reverse("hüsker dü"));
     }
 }
