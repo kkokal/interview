@@ -15,8 +15,9 @@ public class QuestionTwo {
         map.put(Long.valueOf(1), "ONE");
 
         String one = map.get(key);
-        // The following line (one.length()) will throw a NullPointerException because a key matching an
-        // Integer with a value 1 was not found (the Map's keys are Longs).
+        // The following line (one.length()) will throw a NullPointerException because the "one"
+        // object is null. It is null because a key matching an Integer with a value 1
+        // was not found in the Map (the Map's keys are Longs).
         return one.length();
     }
 
