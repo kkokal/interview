@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Question Six</title>
+
+
+</head>
+
+<body>
+<div id="one" onclick="looker(this.id)">div one</div>
+<div id="two" onclick="looker(this.id)">div two</div>
+<div id="three" onclick="looker(this.id)">div three</div>
+<div id="four" onclick="looker(this.id)"><p>Foo Bar</p></div>
+
+<button onclick="looker('zero')">Not found</button>
+
+<script>
+// Write a JavaScript function that takes an element id of a container,
+// and uses an alert to display the inner HTML value of the element if it exists
+var looker = function(elid){
+    var el = document.getElementById(elid);
+    if (el != null) alert(el.innerHTML);
+}
+</script>
+
+</body>
+</html>
